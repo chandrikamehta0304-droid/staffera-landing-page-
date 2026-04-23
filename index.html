@@ -5,43 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Staffera — Launching Soon</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
-    }
-
     body {
-      height: 100vh;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f7f7f7;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #ffffff;
-      color: #111;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* BACKGROUND LOGO */
+    .bg-logo {
+      position: absolute;
+      width: 600px;
+      opacity: 0.05;
+      transform: rotate(-10deg);
     }
 
     .container {
       text-align: center;
+      z-index: 2;
       max-width: 600px;
       padding: 20px;
     }
 
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 600;
-      margin-bottom: 10px;
+    .logo {
+      width: 180px;
+      margin-bottom: 20px;
     }
 
-    h2 {
-      font-size: 1.2rem;
-      font-weight: 400;
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #14532d; /* deep green */
+    }
+
+    p {
       color: #555;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
       line-height: 1.6;
     }
 
@@ -52,75 +58,64 @@
       flex-wrap: wrap;
     }
 
-    input[type="email"] {
-      padding: 12px 14px;
-      font-size: 1rem;
+    input {
+      padding: 12px;
       border: 1px solid #ddd;
       border-radius: 6px;
-      width: 250px;
-      outline: none;
+      width: 240px;
     }
 
     button {
       padding: 12px 18px;
-      font-size: 1rem;
       border: none;
-      background: #111;
-      color: #fff;
+      background: #14532d;
+      color: white;
       border-radius: 6px;
       cursor: pointer;
-      transition: 0.2s ease;
     }
 
     button:hover {
-      background: #333;
+      background: #0f3d22;
     }
 
     .footer {
       margin-top: 40px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #999;
-    }
-
-    @media (max-width: 500px) {
-      h1 {
-        font-size: 2rem;
-      }
-
-      input[type="email"] {
-        width: 100%;
-      }
-
-      form {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Staffera</h1>
-    <h2>
-      Helping skilled immigrants get seen, hired, and placed in the right roles.<br/>
-      Launching soon.
-    </h2>
+  <!-- Background Logo -->
+  <img src="logo.png" class="bg-logo" />
 
-    <!-- FORM -->
+  <div class="container">
+    
+    <!-- Main Logo -->
+    <img src="logo.png" class="logo" />
+
+    <h1>Launching Soon</h1>
+
+    <p>
+      Helping skilled immigrants get seen, hired, and placed in the right roles.
+    </p>
+
     <form action="https://formsubmit.co/hire@staffera.ca" method="POST">
       <input type="email" name="email" placeholder="Enter your email" required />
-      
-      <!-- Optional hidden settings -->
+
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="New Signup - Staffera">
+      <input type="hidden" name="_next" value="https://staffera.ca/thanks.html">
 
       <button type="submit">Notify Me</button>
     </form>
 
     <div class="footer">
-      © 2026 Staffera. All rights reserved.
+      © 2026 Staffera
     </div>
+
   </div>
 
 </body>
